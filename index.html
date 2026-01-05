@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Naskah Voice Over Generator — TikTok Affiliate</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="hero">
+      <span class="badge">TIKTOK AFFILIATE SCRIPT BUILDER</span>
+      <h1>Naskah Voice Over Generator — TikTok Affiliate</h1>
+      <p>Generate naskah VO TikTok Affiliate high-conversion, lengkap caption & teks layar — tinggal copy.</p>
+    </header>
+
+    <main>
+      <section class="card" aria-labelledby="visual-reference">
+        <div class="card-title">
+          <span class="step">1</span>
+          <div>
+            <h2 id="visual-reference">Visual Reference</h2>
+            <p>Upload product photo (opsional, untuk konsistensi visual)</p>
+          </div>
+        </div>
+
+        <label class="upload" for="productPhoto">
+          <div class="upload-icon">🖼️</div>
+          <div>
+            <strong>Upload Product Photo</strong>
+            <span>Tap / click to choose</span>
+          </div>
+        </label>
+        <input type="file" id="productPhoto" accept="image/*" hidden />
+
+        <div class="preview" id="photoPreview" hidden>
+          <img src="" alt="Preview foto produk" />
+          <div>
+            <p>Preview foto produk</p>
+            <button class="btn ghost" type="button" id="removePhoto">Remove</button>
+          </div>
+        </div>
+        <small class="note">Foto dipakai untuk bantu deskripsi visual (tanpa AI).</small>
+      </section>
+
+      <section class="card" aria-labelledby="ad-strategy">
+        <div class="card-title">
+          <span class="step">2</span>
+          <div>
+            <h2 id="ad-strategy">Ad Strategy</h2>
+            <p>Pick the promotion style, mood, ratio, and duration</p>
+          </div>
+        </div>
+
+        <form id="scriptForm">
+          <div class="field">
+            <label for="productLink">Product Link <span>(wajib)</span></label>
+            <div class="input-row">
+              <input id="productLink" type="url" placeholder="https://..." required />
+              <button class="btn ghost" type="button" id="pasteLink">Paste</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="productName">Product Name (opsional)</label>
+            <input id="productName" type="text" placeholder="Contoh: Slingbag Cordura" />
+          </div>
+
+          <div class="field">
+            <label for="productType">Product Type / Kategori</label>
+            <select id="productType">
+              <option value="Tas">Tas</option>
+              <option value="Sepatu">Sepatu</option>
+              <option value="Skincare">Skincare</option>
+              <option value="Fashion">Fashion</option>
+              <option value="Aksesoris">Aksesoris</option>
+              <option value="Gadget">Gadget</option>
+              <option value="Lainnya">Lainnya</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="promotionStyle">Promotion Style</label>
+            <select id="promotionStyle">
+              <option>Product Showcase (Clean)</option>
+              <option>Review Cepat (UGC)</option>
+              <option>Unboxing</option>
+              <option>Problem–Solution</option>
+              <option>Before–After</option>
+              <option>Comparison</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="voiceStyle">Voice Style <span>(wajib)</span></label>
+            <select id="voiceStyle" required>
+              <option value="">Pilih voice style</option>
+              <option>Kekinian Santai</option>
+              <option>Fast Hype</option>
+              <option>Calm Premium</option>
+              <option>Lucu Receh</option>
+              <option>Soft Selling</option>
+              <option>Hard Selling (tetap sopan)</option>
+              <option>Edukatif</option>
+              <option>Storytelling</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="visualMood">Visual Mood</label>
+            <select id="visualMood">
+              <option>Minimalist & Clean</option>
+              <option>Cozy Warm</option>
+              <option>Street Trendy</option>
+              <option>Luxury Studio</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>Aspect Ratio</label>
+            <div class="pill-group" data-pill-group="ratio">
+              <button type="button" class="pill active" data-value="9:16">9:16</button>
+              <button type="button" class="pill" data-value="1:1">1:1</button>
+              <button type="button" class="pill" data-value="16:9">16:9</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Duration</label>
+            <div class="pill-group" data-pill-group="duration">
+              <button type="button" class="pill" data-value="15">15s</button>
+              <button type="button" class="pill active" data-value="20">20s</button>
+              <button type="button" class="pill" data-value="30">30s</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="targetAudience">Target Audience</label>
+            <input id="targetAudience" type="text" placeholder="cowok 18–30, suka slingbag, anak kampus" />
+          </div>
+
+          <div class="field">
+            <label for="keyFeatures">Key Features <span>(wajib)</span></label>
+            <textarea id="keyFeatures" rows="4" placeholder="bahan cordura, inner satin, waterproof, banyak slot" required></textarea>
+            <small class="note">Tulis benefit nyata. Hindari klaim berlebihan & medis.</small>
+          </div>
+
+          <div class="field">
+            <label for="priceRange">Price Range (opsional)</label>
+            <input id="priceRange" type="text" placeholder="<100k, 100–300k, 300k+" />
+          </div>
+
+          <div class="field">
+            <label for="ctaStyle">CTA Style</label>
+            <select id="ctaStyle">
+              <option>Cek keranjang kuning</option>
+              <option>Klik link di bio</option>
+              <option>Klik tombol beli sekarang</option>
+            </select>
+          </div>
+
+          <div class="actions">
+            <button class="btn primary" type="submit">Generate Script</button>
+            <button class="btn ghost" type="reset" id="resetForm">Reset</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card" aria-labelledby="generated-output">
+        <div class="card-title">
+          <span class="step">3</span>
+          <div>
+            <h2 id="generated-output">Generated Output</h2>
+            <p>Ringkasan pilihan + hasil siap copy.</p>
+          </div>
+        </div>
+
+        <div class="summary" id="outputSummary">
+          <span>Style: -</span>
+          <span>Durasi: -</span>
+          <span>Mood: -</span>
+          <span>Ratio: -</span>
+        </div>
+
+        <div class="output">
+          <div class="output-header">
+            <h3>Naskah VO (15–30 detik)</h3>
+            <button class="icon-btn" data-copy="vo" type="button" aria-label="Copy naskah VO">
+              📋
+            </button>
+          </div>
+          <pre id="voOutput">Upload data produk, pilih style, lalu klik Generate.</pre>
+        </div>
+
+        <div class="output">
+          <div class="output-header">
+            <h3>Teks Layar 0–3 detik</h3>
+            <button class="icon-btn" data-copy="screen" type="button" aria-label="Copy teks layar">
+              📋
+            </button>
+          </div>
+          <pre id="screenOutput">Hook singkat akan muncul di sini.</pre>
+        </div>
+
+        <div class="output">
+          <div class="output-header">
+            <h3>Caption</h3>
+            <div class="output-actions">
+              <button class="btn ghost" type="button" id="shuffleCaption">Shuffle Caption</button>
+              <button class="icon-btn" data-copy="caption" type="button" aria-label="Copy caption">
+                📋
+              </button>
+            </div>
+          </div>
+          <pre id="captionOutput">Caption otomatis siap copy.</pre>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast">Copied!</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
